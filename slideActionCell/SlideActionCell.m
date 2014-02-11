@@ -33,6 +33,9 @@
         [self.title setFont:[UIFont fontWithName:@"Helvetica-Bold" size:18]];
         [self.mainView addSubview:self.title];
 
+        UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapGestureCaptured:)];
+        [self.wrapperView addGestureRecognizer:singleTap];
+        
         self.separatorInset = UIEdgeInsetsMake(0, 0, 0, 0);
         
     }
@@ -223,6 +226,11 @@
 
 -(void)scrollViewWillBeginDecelerating:(UIScrollView *)scrollView{
     [self calculateAction];
+}
+
+- (void)singleTapGestureCaptured:(UITapGestureRecognizer *)gesture
+{
+    [delegate cellSelectedAction:self];
 }
 
 -(void)calculateAction{
