@@ -102,6 +102,7 @@ The Delegate ( SlideActionCellDelegate ) has two required methods for when the l
 ```objc
 -(void)cellTriggeredLeftAction:(SlideActionCell *)cell;
 -(void)cellTriggeredRightAction:(SlideActionCell *)cell;
+-(void)cellSelectedAction:(SlideActionCell*)cell;
 ```
 
 ##Note
